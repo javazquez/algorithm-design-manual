@@ -16,8 +16,7 @@
   [coll]
   (loop [idx 1
          [l-coll r-coll :as whole] (split-at idx coll)]
-    (cond 
-      (= whole [() ()]) []
+    (cond
       (empty? r-coll) l-coll
       :else (recur (inc idx)
                    (split-at (inc idx) 
